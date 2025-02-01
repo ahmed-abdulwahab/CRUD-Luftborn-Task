@@ -1,0 +1,24 @@
+<div class="card mb-5" style="width: 50rem;">
+    <div class="card-body">
+      <h5 class="card-title">Google SSO</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Google SSO has Succssed</h6>
+      <p class="card-text">Now you can get the list of the users Just click on the button below and it will show the list of the users without need to log in to the website</p>
+      
+      <button class="btn btn-primary me-3" (click)="getUserWithGoogleAuthSSO()">Fetch User Data</button>
+      <button class="btn btn-secondary" (click)="signOut()">SignOut from google SSO auth</button>
+    </div>
+</div>
+
+
+@if(members) {
+    <div class="row">
+    
+        @for (member of members; track member.id) {
+            <div class="col-2">
+                <app-member-card [member]="member"></app-member-card>
+            </div>
+        }
+    
+    </div>
+}
+

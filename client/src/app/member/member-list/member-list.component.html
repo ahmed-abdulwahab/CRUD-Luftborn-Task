@@ -1,0 +1,20 @@
+<div class="alert alert-info text-center fw-bold p-3 mb-3">
+    <p>
+        This page allows you to sort users by their last active date or score.  
+        You can also increase a user's score by clicking the "+ Add Score" button on each card.  
+        The list updates dynamically based on your selected sorting method.
+        So please start adding scores to the users to use the sorting functionality.
+    </p>
+</div>
+    <div class="filterBtns btn-group mb-3">
+        <button class="btn btn-primary" (click)="setSortBy('lastActive')">Sort by Last Active</button>
+        <button class="btn btn-secondary" (click)="setSortBy('score')">Sort by Score</button>
+    </div>
+    <div class="row">
+        @for (member of members; track member.id) {
+            <div class="col-2">
+                <app-member-card [member]="member" (scoreUpdated)="onScoreUpdated()"></app-member-card>
+            </div>
+        }
+    </div>
+
